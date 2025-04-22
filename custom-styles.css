@@ -1,0 +1,157 @@
+/* Custom styles for demo version */
+
+/* Highlight the "Servizi" button in the main menu with elegant animation */
+#menu-item-6154 > a,
+#menu-item-18724 > a {
+    position: relative !important;
+    overflow: hidden !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+    z-index: 1 !important;
+}
+
+#menu-item-6154 > a:before,
+#menu-item-18724 > a:before {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1)) !important;
+    transform: rotate(30deg) !important;
+    z-index: -1 !important;
+    animation: shineEffect 3s infinite linear !important;
+}
+
+@keyframes shineEffect {
+    0% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}
+
+/* Highlight "Sport ed Esperienze" in the dropdown with interactive animation */
+#menu-item-6174,
+#menu-item-18726 {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#menu-item-6174 > a,
+#menu-item-18726 > a {
+    position: relative !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    padding: 5px 10px !important;
+    border-radius: 5px !important;
+    background: linear-gradient(45deg, #3498db, #2980b9, #3498db) !important;
+    background-size: 200% 200% !important;
+    animation: gradientShift 3s ease infinite !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+}
+
+#menu-item-6174 > a:before,
+#menu-item-18726 > a:before {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: rgba(255,255,255,0.2) !important;
+    transform: rotate(30deg) !important;
+    z-index: -1 !important;
+    animation: sportShineEffect 2s infinite linear !important;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50% !important; }
+    50% { background-position: 100% 50% !important; }
+    100% { background-position: 0% 50% !important; }
+}
+
+@keyframes sportShineEffect {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    100% { transform: translateX(100%) rotate(30deg); }
+}
+
+#menu-item-6174 > a:hover,
+#menu-item-18726 > a:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.7) !important;
+}
+
+/* Pulse animation for the Servizi button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(176, 136, 120, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(176, 136, 120, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(176, 136, 120, 0);
+    }
+}
+
+/* Add a "Demo" label to the top of the page */
+body:before {
+    content: "Aloe Demo";
+    display: block;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+/* Adjust header position to accommodate the demo label */
+.site-header {
+    top: 26px !important;
+}
+
+/* Disable all other links except Servizi and Sport ed Esperienze */
+.menu-item:not(#menu-item-6154):not(#menu-item-18724):not(#menu-item-6174):not(#menu-item-18726) > a {
+    pointer-events: none !important;
+    opacity: 0.6 !important;
+    cursor: default !important;
+}
+
+/* Keep the dropdown functionality for Servizi */
+#menu-item-6154 .sub-menu,
+#menu-item-18724 .sub-menu {
+    pointer-events: auto !important;
+}
+
+/* Make Servizi dropdown open on hover */
+#menu-item-6154:hover .sub-menu,
+#menu-item-18724:hover .sub-menu {
+    display: block !important;
+}
+
+/* Add visual cue to Servizi button - pulsing effect */
+#menu-item-6154 > a,
+#menu-item-18724 > a {
+    animation: pulse 2s infinite ease-in-out !important;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Style for blocked dropdowns */
+.no-dropdown > a {
+    cursor: not-allowed !important;
+}
