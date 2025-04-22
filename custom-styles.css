@@ -128,6 +128,23 @@ body:before {
     cursor: default !important;
 }
 
+/* Disable all 'Scopri di più', 'Scopri le aree', 'Scopri tutte le attività', 'Entra nel resort', 'Prenota' buttons */
+.nuss-ele-button-link,
+a[href*="struttura"],
+a[href*="lets-ski"],
+a[href*="camere"],
+a[href*="italian-lifestyle"],
+a[href*="servizi"],
+a[href*="ristoranti"],
+a[href*="spa-wellness"],
+a[href*="sport-esperienze"],
+a[href*="booking.valturcristallo.com"] {
+    pointer-events: none !important;
+    cursor: default !important;
+    opacity: 0.7 !important;
+    text-decoration: none !important;
+}
+
 /* Keep the dropdown functionality for Servizi */
 #menu-item-6154 .sub-menu,
 #menu-item-18724 .sub-menu {
